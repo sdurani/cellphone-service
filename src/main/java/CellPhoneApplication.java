@@ -7,6 +7,7 @@ public class CellPhoneApplication {
     public static void main(String[] args) {
 
         CellPhone phone1 = new CellPhone();
+        CellPhone phone2 = new CellPhone();
 
         System.out.println("What is the serial number?");
         int userSerialNumber = read.nextInt();
@@ -30,8 +31,26 @@ public class CellPhoneApplication {
         String userOwner = read.nextLine();
         phone1.setOwner(userOwner);
 
-        phone1.displayInfo();
+//        phone1.displayInfo();
+
+        phone2.setOwner("John Smith");
+        phone2.setPhoneNumber("510-767-6767");
+        phone2.setCarrier("AT&T");
+        phone2.setModel("Temu");
+        phone2.setSerialNumber(67676767);
+
+        display(phone1);
+        display(phone2);
+
+        phone1.dial(phone2.getPhoneNumber());
+        phone2.dial(phone1.getPhoneNumber());
 
         read.close();
+    }
+
+    // Accepts a CellPhone object
+    public static void display(CellPhone phone) {
+        System.out.println("Owner: " + phone.getOwner());
+        System.out.println("Phone Number: " + phone.getPhoneNumber());
     }
 }

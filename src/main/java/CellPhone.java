@@ -8,6 +8,7 @@ public class CellPhone {
     String phoneNumber;
     String owner;
 
+    // Cellphone constructor: tells the requirements
     public CellPhone() {
         serialNumber = 0;
         model = "";
@@ -15,6 +16,7 @@ public class CellPhone {
         phoneNumber = "";
         owner = "";
     }
+
 
     public int getSerialNumber() {
         return this.serialNumber;
@@ -56,7 +58,7 @@ public class CellPhone {
         this.owner = owner;
     }
 
-    void displayInfo() {
+    public void displayInfo() {
         System.out.println("----------------------------");
         System.out.println("Owner: " + getOwner());
         System.out.println("Serial Number: " + getSerialNumber());
@@ -64,5 +66,9 @@ public class CellPhone {
         System.out.println("Carrier: " + getCarrier());
         System.out.println("Phone Number: " + getPhoneNumber());
         System.out.println("----------------------------");
+    }
+
+    public void dial(String phoneNumber) {
+        System.out.println(getOwner() + "'s phone is calling " + phoneNumber);
     }
 }
