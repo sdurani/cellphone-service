@@ -8,6 +8,7 @@ public class CellPhoneApplication {
 
         CellPhone phone1 = new CellPhone();
         CellPhone phone2 = new CellPhone();
+        CellPhone phone3 = new CellPhone(9867676, "iPhone", "T-mobile", "555-676-8910", "Jane Doe");
 
         System.out.println("What is the serial number?");
         int userSerialNumber = read.nextInt();
@@ -41,16 +42,22 @@ public class CellPhoneApplication {
 
         display(phone1);
         display(phone2);
+        display(phone3);
 
         phone1.dial(phone2.getPhoneNumber());
         phone2.dial(phone1.getPhoneNumber());
+        phone2.dial(phone3.getPhoneNumber());
+
 
         read.close();
     }
 
     // Accepts a CellPhone object
     public static void display(CellPhone phone) {
+        System.out.println("----------------------------");
         System.out.println("Owner: " + phone.getOwner());
         System.out.println("Phone Number: " + phone.getPhoneNumber());
+        System.out.println("Model: " + phone.getModel());
+        System.out.println("----------------------------");
     }
 }

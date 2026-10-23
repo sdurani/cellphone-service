@@ -17,6 +17,22 @@ public class CellPhone {
         owner = "";
     }
 
+    public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner) {
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.carrier = carrier;
+        this.phoneNumber = phoneNumber;
+        this.owner = owner;
+    }
+
+    public void dial(String phoneNumber) {
+        System.out.println(getOwner() + "'s phone is calling " + phoneNumber);
+    }
+
+    // Overloading version of dial method
+    public void dial(CellPhone phone) {
+        System.out.println(getOwner() + "'s phone is calling " + phone.getPhoneNumber());
+    }
 
     public int getSerialNumber() {
         return this.serialNumber;
@@ -66,9 +82,5 @@ public class CellPhone {
         System.out.println("Carrier: " + getCarrier());
         System.out.println("Phone Number: " + getPhoneNumber());
         System.out.println("----------------------------");
-    }
-
-    public void dial(String phoneNumber) {
-        System.out.println(getOwner() + "'s phone is calling " + phoneNumber);
     }
 }
